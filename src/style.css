@@ -25,6 +25,7 @@ body{
     width: 100vw;
     height: 100vh;
     height: 100dvh;
+    transition: background-color 0.5s ease-out;
 }
 
 body.dark{
@@ -49,6 +50,8 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: min(2em,1%) 0;
+    overflow: visible;
+    transition: background-color 0.5s ease-out;
 }
 
 header.dark{
@@ -69,9 +72,10 @@ nav{
 ul{
     list-style-type: none;
     display: flex;
+    overflow: visible;
 }
 
-#nav-title, li{
+#nav-title, li.nav-buttons{
     display: flex;
     align-items: center;
 }
@@ -81,14 +85,14 @@ ul{
     min-width: 200px;
 }
 
-li{
+li.nav-buttons{
     padding: 20px;
     margin: min(0.5em,0.5vw) !important;
     display: flex;
     align-items: center;
 }
 
-li, #mode, div.button-nav-extra{
+li.nav-buttons, #mode, div.button-nav-extra{
     border-radius: 20px;
     transition: all 0.2s ease-out;
 }
@@ -100,25 +104,25 @@ div.button-nav-extra{
     max-width: 120px;
 }
 
-div.button-nav-extra, li, #mode{
+div.button-nav-extra, li.nav-buttons, #mode{
     border: 2px solid rgba(0, 0, 0, 0);
 }
 
-div.button-nav-extra:hover, li:hover, #mode:hover{
+div.button-nav-extra:hover, li.nav-buttons:hover, #mode:hover{
     cursor: pointer;
     transform: translateY(-7px);
 }
 
-div.button-nav-extra.dark:hover, li.dark:hover, #mode.dark:hover{
+div.button-nav-extra.dark:hover, li.nav-buttons.dark:hover, #mode.dark:hover{
     animation: ease-in-nav-button-hover-dark 0.8s ease-in forwards;
 }
 
-div.button-nav-extra.light:hover, li.light:hover, #mode.light:hover{
+div.button-nav-extra.light:hover, li.nav-buttons.light:hover, #mode.light:hover{
     animation: ease-in-nav-button-hover-light 0.8s ease-in forwards;
     border: 2px solid black;
 }
 
-div.button-nav-extra::selection, li::selection, #mode::selection {
+div.button-nav-extra::selection, li.nav-buttons::selection, #mode::selection {
     background: transparent;
     color: inherit;
 }
@@ -139,6 +143,10 @@ div#mode{
 }
 
 /* MAIN */
+
+main{
+    transition: background-color 0.5s ease-out;
+}
 
 main *{
     animation: ease-opacity 0.5s ease-out forwards;
@@ -175,11 +183,12 @@ p.text{
     font-size: clamp(15px,2vw,18px);
 }
 
-#presentation, #contact{
+#presentation, #about, #contact{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    pointer-events: none;
 }
 
 .important.dark{
@@ -281,6 +290,71 @@ hr.divisor.light{
     opacity: 0.4;
 }
 
+#dropdown-menu {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    left: auto;
+    flex-direction: column;
+    border-radius: 12px;
+    padding: 8px;
+    z-index: 10000000;
+    min-width: 150px;
+}
+
+
+#dropdown-menu.dark {
+    background-color: rgb(20, 20, 20);
+    border: 1px solid rgb(40, 40, 40);
+}
+
+#dropdown-menu.light {
+    background-color: rgb(243, 243, 243);
+    border: 1px solid rgb(200, 200, 200);
+}
+
+#dropdown-menu li {
+    padding: 12px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 2px 0 !important;
+}
+
+#foto-profilo {
+    width: clamp(150px, 20vw, 250px);
+    height: clamp(150px, 20vw, 250px);
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 40px;
+}
+
+#skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.skill-item {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid;
+    transition: all 0.2s ease-out;
+}
+
+.skill-item.dark {
+    border-color: var(--dark-theme);
+}
+
+.skill-item.light {
+    border-color: var(--light-theme);
+}
+
+.skill-item:hover {
+    transform: translateY(-7px);
+    cursor: default;
+}
+
 /* Altro */
 .dark{
     color: white;
@@ -294,8 +368,18 @@ hr.divisor.light{
     display: none;
 }
 
+#pages{
+    display: none;
+    position: relative;
+    overflow: visible;
+}
+
 #sole.light, #luna.dark{
     display: block;
+}
+
+.hidden{
+    display: none !important;
 }
 
 /* ANIMAZIONI E MEDIA */
@@ -313,6 +397,14 @@ hr.divisor.light{
 @media (max-width:895px) {
     li.nav-buttons{
         display: none;
+    }
+
+    li.nav-buttons#mode{
+        display: block;
+    }
+
+    #pages{
+        display: flex;
     }
 
     #img-background {

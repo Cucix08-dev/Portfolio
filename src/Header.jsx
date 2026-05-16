@@ -1,7 +1,26 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function Header({ setPage, darkMode, setDarkMode }) {
     const darkClass = darkMode ? "dark" : "light";
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [menuVisible, setMenuVisible] = useState(false);
+    const timerRef = useRef(null);
+
+    const openMenu = () => {
+        if (timerRef.current) clearTimeout(timerRef.current);
+        setMenuVisible(true);
+        setMenuOpen(true);
+    };
+
+    const closeMenu = () => {
+        setMenuOpen(false);
+        timerRef.current = setTimeout(() => setMenuVisible(false), 200);
+    };
+
+    const handlePage = (page) => {
+        setPage(page);
+        closeMenu();
+    };
 
     return (
         <header className={darkClass}>
@@ -17,39 +36,56 @@ export default function Header({ setPage, darkMode, setDarkMode }) {
 
             <nav>
                 <ul>
-                    <li onClick={() => setPage(0)} className={`nav-buttons ${darkClass}`}>
-                        <a>
-                            <span className="text">Home</span>
-                        </a>
+                    <li onClick={() => handlePage(0)} className={`nav-buttons ${darkClass}`}>
+                        <a><span className="text">Home</span></a>
                     </li>
 
-                    <li onClick={() => setPage(1)} className={`nav-buttons ${darkClass}`}>
-                        <a>
-                            <span className="text">About</span>
-                        </a>
+                    <li onClick={() => handlePage(1)} className={`nav-buttons ${darkClass}`}>
+                        <a><span className="text">About</span></a>
                     </li>
 
-                    <li onClick={() => setPage(2)} className={`nav-buttons ${darkClass}`}>
-                        <a>
-                            <span className="text">Progetti</span>
-                        </a>
+                    <li onClick={() => handlePage(2)} className={`nav-buttons ${darkClass}`}>
+                        <a><span className="text">Progetti</span></a>
                     </li>
 
-                    <li onClick={() => setPage(3)} className={`nav-buttons ${darkClass}`}>
-                        <a>
-                            <span className="text">Contatti</span>
-                        </a>
+                    <li onClick={() => handlePage(3)} className={`nav-buttons ${darkClass}`}>
+                        <a><span className="text">Contatti</span></a>
                     </li>
 
-                    <li id="mode" className={`${darkClass}`} onClick={() => setDarkMode(!darkMode)}>
-                        <svg
-                            id="sole"
-                            width="48"
-                            height="48"
-                            viewBox="0 0 120 120"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className={darkClass}
-                        >
+                    <li
+                        id="pages"
+                        className={`nav-buttons ${darkClass}`}
+                        style={{ justifyContent: "center", alignItems: "center", position: "relative" }}
+                        onClick={(e) => { e.stopPropagation(); menuOpen ? closeMenu() : openMenu(); }}
+                    >
+                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                            <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                            <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                        </svg>
+
+                        {menuVisible && (
+                            <ul
+                                id="dropdown-menu"
+                                className={darkClass}
+                                style={{ animation: menuOpen ? "fadeIn 0.2s ease-out forwards" : "fadeOut 0.2s ease-out forwards" }}
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                {["Home", "About", "Progetti", "Contatti"].map((item, index) => (
+                                    <li
+                                        key={item}
+                                        className={darkClass}
+                                        onClick={(e) => { e.stopPropagation(); handlePage(index); }}
+                                    >
+                                        <span className="text">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                    </li>
+
+                    <li id="mode" className={`${darkClass} nav-buttons`} onClick={() => setDarkMode(!darkMode)}>
+                        <svg id="sole" width="48" height="48" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" className={darkClass}>
                             <circle cx="60" cy="60" r="20" fill="none" stroke="black" strokeWidth="4" />
                             <line x1="60" y1="10" x2="60" y2="28" stroke="black" strokeWidth="4" />
                             <line x1="60" y1="92" x2="60" y2="110" stroke="black" strokeWidth="4" />
@@ -61,21 +97,8 @@ export default function Header({ setPage, darkMode, setDarkMode }) {
                             <line x1="25" y1="95" x2="38" y2="82" stroke="black" strokeWidth="4" />
                         </svg>
 
-                        <svg
-                            id="luna"
-                            width="48"
-                            height="48"
-                            viewBox="0 0 120 120"
-                            xmlns="http://www.w3.org/2000/svg"
-                            style={{ transform: "translateX(10px)" }}
-                            className={darkClass}
-                        >
-                            <path
-                                d="M40 20 A40 40 0 1 0 60 100 A25 40 0 1 1 60 20 Z"
-                                fill="black"
-                                stroke="white"
-                                strokeWidth="4"
-                            />
+                        <svg id="luna" width="48" height="48" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style={{ transform: "translateX(10px)" }} className={darkClass}>
+                            <path d="M40 20 A40 40 0 1 0 60 100 A25 40 0 1 1 60 20 Z" fill="black" stroke="white" strokeWidth="4" />
                         </svg>
                     </li>
                 </ul>
@@ -83,4 +106,3 @@ export default function Header({ setPage, darkMode, setDarkMode }) {
         </header>
     );
 }
-
