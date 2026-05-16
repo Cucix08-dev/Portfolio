@@ -1,0 +1,347 @@
+@font-face {
+    font-family: 'Srotone';
+    src: url("fonts/Srotone-Regular.ttf") format("truetype");
+}
+
+:root{
+    --light-theme: rgb(40, 168, 203);
+    --dark-theme: rgb(40, 203, 40);
+
+    --light-mode: rgb(243, 243, 243);
+    --dark-mode: rgb(0, 0, 0);
+}
+
+* {
+    outline: none;
+}
+
+html {
+    font-family: 'Srotone';
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+}
+
+body.dark{
+    background-color: var(--dark-mode);
+    color: white;
+}
+
+body.light{
+    background-color: var(--light-mode);
+    color: rgb(0, 0, 0);
+}
+
+/* HEADER */
+
+header{
+    height: 100px;
+    min-width: 100vw;
+    display: flex;
+    font-size: 22px;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    justify-content: space-between;
+    align-items: center;
+    padding: min(2em,1%) 0;
+}
+
+header.dark{
+    background-color: var(--dark-mode);
+    border-color: rgb(30, 30, 30);
+    color: white;
+}
+
+header.light{
+    background-color: var(--light-mode);
+    color: black;
+}
+
+nav{
+    margin-right: 20px;
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
+}
+
+#nav-title, li{
+    display: flex;
+    align-items: center;
+}
+
+#nav-title{
+    padding: 20px 0 20px 20px;
+    min-width: 200px;
+}
+
+li{
+    padding: 20px;
+    margin: min(0.5em,0.5vw) !important;
+    display: flex;
+    align-items: center;
+}
+
+li, #mode, div.button-nav-extra{
+    border-radius: 20px;
+    transition: all 0.2s ease-out;
+}
+
+div.button-nav-extra{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    max-width: 120px;
+}
+
+div.button-nav-extra, li, #mode{
+    border: 2px solid rgba(0, 0, 0, 0);
+}
+
+div.button-nav-extra:hover, li:hover, #mode:hover{
+    cursor: pointer;
+    transform: translateY(-7px);
+}
+
+div.button-nav-extra.dark:hover, li.dark:hover, #mode.dark:hover{
+    animation: ease-in-nav-button-hover-dark 0.8s ease-in forwards;
+}
+
+div.button-nav-extra.light:hover, li.light:hover, #mode.light:hover{
+    animation: ease-in-nav-button-hover-light 0.8s ease-in forwards;
+    border: 2px solid black;
+}
+
+div.button-nav-extra::selection, li::selection, #mode::selection {
+    background: transparent;
+    color: inherit;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+#owner-site{
+    font-size: 20px;
+}
+
+div#mode{
+    aspect-ratio: 1/1;
+    margin: 10px;
+    height: 60px;
+}
+
+/* MAIN */
+
+main *{
+    animation: ease-opacity 0.5s ease-out forwards;
+}
+
+@keyframes ease-opacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+main.dark {
+    background-color: var(--dark-mode);
+}
+
+main.light {
+    background-color: var(--light-mode);
+}
+
+.container {
+    margin: min(1.5em,5%) 0 min(1.5em,5%) 100px;
+    width: clamp(300px,50vw,500px);
+}
+
+h1.title-section{
+    font-size: clamp(25px,2vw,32px);
+}
+
+p.text{
+    font-size: clamp(15px,2vw,18px);
+}
+
+#presentation, #contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.important.dark{
+    color: var(--dark-theme) !important;
+}
+
+.important.light{
+    color: var(--light-theme) !important;
+}
+
+#container-presentation{
+    display: flex;
+    margin: auto;
+    align-items: center;
+}
+
+#img-background.dark {
+    position: relative;
+    background-image: url("../imgs/js-code-background.png");
+    width: 100%;
+    height: 400px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: right;
+    display: flex;
+    justify-content: left;
+    overflow: hidden;
+    margin: 20px 50px 20px auto;
+    filter: blur(10%);
+}
+
+#img-background.light {
+    display: none;
+}
+
+hr.divisor{
+    width: 90%;
+}
+
+hr.divisor.dark{
+    border-color: var(--dark-theme);
+}
+
+hr.divisor.light{
+    border-color: var(--light-theme);
+}
+
+#icon-mailbox{
+    width: 32px;
+    height: 32px;
+}
+
+#icon-mailbox.dark{
+    stroke: white !important;
+}
+
+#icon-mailbox.light{
+    stroke: black !important;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin: min(8%,2em) 0;
+}
+
+.container-text {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid;
+    border-radius: 0;
+    padding: 8px 4px;
+    margin-top: 4%;
+    font-family: 'Srotone';
+    font-size: clamp(15px, 2vw, 18px);
+    width: 100%;
+    transition: all 0.2s ease-out;
+}
+
+.container-text.dark {
+    color: white;
+    border-color: rgb(30, 30, 30);
+}
+
+.container-text.light {
+    color: black;
+    border-color: black;
+}
+
+.container-text.dark:focus {
+    border-color: var(--dark-theme);
+}
+
+.container-text.light:focus {
+    border-color: var(--light-theme);
+}
+
+.container-text::placeholder {
+    opacity: 0.4;
+}
+
+/* Altro */
+.dark{
+    color: white;
+}
+
+.light{
+    color: black;
+}
+
+#sole.dark, #luna.light{
+    display: none;
+}
+
+#sole.light, #luna.dark{
+    display: block;
+}
+
+/* ANIMAZIONI E MEDIA */
+
+@media (min-width:1300px) {
+    .container{
+        max-width: 1300px;
+    }
+
+    #img-background {
+        max-width: 1200px;
+    }
+}
+
+@media (max-width:895px) {
+    li.nav-buttons{
+        display: none;
+    }
+
+    #img-background {
+        display: none !important;
+    }
+}
+
+@keyframes ease-in-page {
+    0%   { transform: translateY(-30px); }
+    10%  { transform: translateY(30px); }
+    20%  { transform: translateY(-20px); }
+    30%  { transform: translateY(20px); }
+    40%  { transform: translateY(-10px); }
+    50%  { transform: translateY(10px); }
+    60%  { transform: translateY(-6px); }
+    70%  { transform: translateY(6px); }
+    80%  { transform: translateY(-3px); }
+    90%  { transform: translateY(3px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes ease-in-nav-button-hover-dark {
+    0% { background-color: black; } 
+    50% { background-color: rgba(28, 28, 28, 0.809); } 
+    100% { background-color: rgba(54, 54, 54, 0.359); }
+}
+
+@keyframes ease-in-nav-button-hover-light {
+    0% { background-color: rgb(255, 255, 255); } 
+    50% { background-color: rgba(222, 222, 222, 0.809); } 
+    100% { background-color: rgba(182, 182, 182, 0.359); }
+}
