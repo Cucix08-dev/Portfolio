@@ -64,6 +64,7 @@ header.light{
     color: black;
 }
 
+
 nav{
     margin-right: 20px;
 }
@@ -81,7 +82,7 @@ ul{
 
 #nav-title{
     padding: 20px 0 20px 20px;
-    min-width: 200px;
+    min-width: 130px;
 }
 
 li.nav-buttons{
@@ -131,7 +132,7 @@ a{
 }
 
 #owner-site{
-    font-size: 20px;
+    font-size: clamp(0.7rem,2vw,1.25rem);
 }
 
 div#mode{
@@ -406,6 +407,12 @@ hr.divisor.light{
 
     #img-background {
         display: none !important;
+    }
+}
+
+@media (max-width:440px) {
+    header{
+        justify-content:flex-start;
     }
 }
 
