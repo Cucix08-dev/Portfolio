@@ -82,7 +82,7 @@ ul{
 
 #nav-title{
     padding: 20px 0 20px 20px;
-    min-width: 130px;
+    min-width: 140px;
 }
 
 li.nav-buttons{
@@ -132,7 +132,7 @@ a{
 }
 
 #owner-site{
-    font-size: clamp(0.7rem,2vw,1.25rem);
+    font-size: clamp(0.8rem,2vw,1.25rem);
 }
 
 div#mode{
@@ -170,7 +170,7 @@ main.light {
 }
 
 .container {
-    margin: min(1.5em,5%) 0 min(1.5em,5%) 100px;
+    margin: min(1.5em,5%) 0 min(1.5em,5%) 10%;
     width: clamp(300px,50vw,500px);
 }
 
