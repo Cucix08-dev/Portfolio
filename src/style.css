@@ -110,7 +110,6 @@ div.button-nav-extra, li.nav-buttons, #mode{
 
 div.button-nav-extra:hover, li.nav-buttons:hover, #mode:hover{
     cursor: pointer;
-    transform: translateY(-7px);
 }
 
 div.button-nav-extra.dark:hover, li.nav-buttons.dark:hover, #mode.dark:hover{
@@ -188,7 +187,6 @@ p.text{
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    pointer-events: none;
 }
 
 .important.dark{
@@ -298,8 +296,9 @@ hr.divisor.light{
     flex-direction: column;
     border-radius: 12px;
     padding: 8px;
-    z-index: 10000000;
+    z-index: 100;
     min-width: 150px;
+    cursor: pointer;
 }
 
 
@@ -316,7 +315,6 @@ hr.divisor.light{
 #dropdown-menu li {
     padding: 12px 16px;
     border-radius: 8px;
-    cursor: pointer;
     margin: 2px 0 !important;
 }
 
