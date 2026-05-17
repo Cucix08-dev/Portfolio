@@ -92,7 +92,7 @@ li.nav-buttons{
     align-items: center;
 }
 
-li.nav-buttons, #mode, div.button-nav-extra{
+li.nav-buttons, #mode, div.button-nav-extra, .mobile-list{
     border-radius: 20px;
     transition: all 0.2s ease-out;
 }
@@ -108,20 +108,25 @@ div.button-nav-extra, li.nav-buttons, #mode{
     border: 2px solid rgba(0, 0, 0, 0);
 }
 
-div.button-nav-extra:hover, li.nav-buttons:hover, #mode:hover{
+div.button-nav-extra:hover, li.nav-buttons:hover, #mode:hover, .mobile-list:hover{
     cursor: pointer;
+    transform: translateY(-7px);
 }
 
-div.button-nav-extra.dark:hover, li.nav-buttons.dark:hover, #mode.dark:hover{
+#pages:hover{
+    z-index: 100;
+}
+
+div.button-nav-extra.dark:hover, li.nav-buttons.dark:hover, #mode.dark:hover, .mobile-list.dark:hover{
     animation: ease-in-nav-button-hover-dark 0.8s ease-in forwards;
 }
 
-div.button-nav-extra.light:hover, li.nav-buttons.light:hover, #mode.light:hover{
+div.button-nav-extra.light:hover, li.nav-buttons.light:hover, #mode.light:hover, .mobile-list.light:hover{
     animation: ease-in-nav-button-hover-light 0.8s ease-in forwards;
     border: 2px solid black;
 }
 
-div.button-nav-extra::selection, li.nav-buttons::selection, #mode::selection {
+::selection {
     background: transparent;
     color: inherit;
 }
@@ -132,7 +137,7 @@ a{
 }
 
 #owner-site{
-    font-size: clamp(0.8rem,2vw,1.25rem);
+    font-size: clamp(1rem,2vw,1.25rem);
 }
 
 div#mode{

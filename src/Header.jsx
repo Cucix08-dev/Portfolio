@@ -61,7 +61,7 @@ export default function Header({ setPage, darkMode, setDarkMode }) {
                                 {["Home", "About", "Progetti", "Contatti"].map((item, index) => (
                                     <li
                                         key={item}
-                                        className={darkClass}
+                                        className={`mobile-list ${darkClass}`}
                                         onClick={(e) => { e.stopPropagation(); handlePage(index); }}
                                     >
                                         <span className="text">{item}</span>
