@@ -39,8 +39,8 @@ export default function Contatti({ darkClass }) {
 
     return (
         <main className={darkClass}>
-            <div className="container">
-                <h1 className={`text title-section ${darkClass}`}>
+            <div id="contact" className="container">
+                <h1 className={`title-section ${darkClass}`}>
                     Contattami :)
                 </h1>
 
