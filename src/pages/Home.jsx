@@ -18,8 +18,8 @@ export default function Home({ setPage, darkClass }) {
 
                     <p className="text">
                         Mi piace creare interfacce moderne, pulite e funzionali, con attenzione a performance,
-                        accessibilità e qualità del codice.
-                        Attualmente sono alla ricerca di un'opportunità come
+                        accessibilita' e qualita' del codice.
+                        Attualmente sono alla ricerca di un'opportunita' come
                         sviluppatore <span className={`important ${darkClass}`}>Front-End</span> in Italia,
                         dove poter crescere professionalmente e contribuire in modo concreto.
                     </p>
