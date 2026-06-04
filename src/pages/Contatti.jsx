@@ -38,7 +38,7 @@ export default function Contatti({ darkClass }) {
     };
 
     return (
-        <main className={darkClass}>
+        <>
             <div id="contact" className="container">
                 <h1 className={`title-section ${darkClass}`}>
                     Contattami :)
@@ -88,6 +88,6 @@ export default function Contatti({ darkClass }) {
                     </div>
                 </div>
             </div>
-        </main>
+        </>
     );
 }

@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function About({ darkClass }) {
     return (
-        <main className={darkClass}>
+        <>
             <div id="about" className="container">
 
                 {/* SEZIONE INTRO */}
@@ -40,6 +40,6 @@ export default function About({ darkClass }) {
                 </div>
 
             </div>
-        </main>
+        </>
     );
 }

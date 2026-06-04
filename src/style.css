@@ -9,6 +9,9 @@
 
     --light-mode: rgb(243, 243, 243);
     --dark-mode: rgb(0, 0, 0);
+
+    --glow-project-light: rgba(40, 168, 203, 0.85);
+    --glow-project-dark: rgba(40, 203, 40, 0.838);
 }
 
 * {
@@ -24,6 +27,7 @@ body{
     margin: 0;
     width: 100vw;
     height: 100dvh;
+    overflow-x: hidden;
     transition: background-color 0.5s ease-out;
 }
 
@@ -187,11 +191,100 @@ p.text{
     font-size: clamp(15px,2vw,18px);
 }
 
-#presentation, #about, #contact{
+#presentation, #about, #contact, #progetti{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+}
+
+#progetti{
+    margin: min(1.5em,5%) 0 min(1.5em,5%) 5%;
+}
+
+#grid-project{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    gap: 20px;
+}
+
+.project-container{
+    width: 18vw;
+    aspect-ratio: 1/2;
+    border-radius: 20px;
+    margin: 20px 0;
+    transition: 
+        transform ease 0.3s,
+        box-shadow ease 0.3s;
+}
+
+.project-container img{
+    background-size: cover;
+    aspect-ratio: 16/9;
+    max-width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+.project-container .title-project, .project-container .description{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.project-container .title-project{
+    display: block;
+    margin-top: 20px !important;
+    font-size: 1.1vw;
+    font-weight: 900;
+}
+
+.title-project.dark{
+    text-shadow: 0 0 20px var(--glow-project-dark);
+}
+
+.title-project.light{
+    text-shadow: 0 0 20px var(--glow-project-light);
+}
+
+.project-container .description{
+    font-size: 0.9vw;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.description.dark::selection {
+    color: var(--dark-theme);
+}
+
+.description.light::selection {
+    color: var(--light-theme);
+}
+
+.project-container:hover{
+    transform: scale(1.05);
+}
+
+.project-container.dark:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--dark-theme);
+}
+
+.project-container.light:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--light-theme);
+}
+
+.project-container.dark{
+    background-color: var(--dark-mode);
+    color: var(--dark-theme);
+    border: solid 1.1px var(--dark-theme);
+}
+
+.project-container.light{
+    background-color: var(--light-mode);
+    color: var(--light-theme);
+    border: solid 1.1px var(--light-theme);
 }
 
 .important.dark{
@@ -403,11 +496,15 @@ hr.divisor.light{
     }
 
     li.nav-buttons#mode{
-        display: block;
+        display: none;
     }
 
     #pages{
         display: flex;
+    }
+
+    #pages #mode{
+        display: block;
     }
 
     #img-background {
