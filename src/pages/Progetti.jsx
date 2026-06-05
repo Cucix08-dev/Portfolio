@@ -56,7 +56,7 @@ export default function Progetti({ darkClass }) {
                         className={`project-container ${darkClass}`}
                         onClick={(e) => { e.stopPropagation(); handlePage(index); }}
                         >
-                            <img src={`../..//imgs/${(item.title).replace(/\s+/g, "")}.png`} alt=""/>
+                            <img src={`/imgs/${(item.title).replace(/\s+/g, "")}.png`} alt=""/>
                             <span className="text title-project">{item.title}</span>
                             <p className={`description ${darkClass}`}><br/>{item.description}</p>
                         </div>
