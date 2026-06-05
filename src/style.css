@@ -488,6 +488,8 @@ hr.divisor.light{
     #img-background {
         max-width: 1200px;
     }
+
+
 }
 
 @media (max-width:895px) {
@@ -510,11 +512,43 @@ hr.divisor.light{
     #img-background {
         display: none !important;
     }
+
+    #grid-project{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .project-container{
+        width: 25vw;
+    }
+
+    .project-container .title-project{
+        font-size: 1.5vw;
+    }
+
+    .project-container .description{
+        font-size: 1.25vw;
+    }
 }
 
 @media (max-width:440px) {
     header{
         justify-content:flex-start;
+    }
+
+    #grid-project{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-container{
+        width: 35vw;
+    }
+
+    .project-container .title-project{
+        font-size: 2vw;
+    }
+
+    .project-container .description{
+        font-size: 2vw;
     }
 }
 
