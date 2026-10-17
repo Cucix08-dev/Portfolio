@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Progetti({ darkClass, setPage }) {
     const projects = [
@@ -72,6 +72,49 @@ export default function Progetti({ darkClass, setPage }) {
             RepoGithub: `https://github.com/Cucix08-dev/Quantum-Orbital-Manim`
         }
     ]
+
+    useEffect(() => {
+        const projectElements =
+            document.querySelectorAll(".project-container");
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.remove(
+                            "unobserved-project"
+                        );
+
+                        entry.target.classList.add(
+                            "show-project"
+                        );
+
+                    } else {
+
+                        entry.target.classList.remove(
+                            "show-project"
+                        );
+
+                        entry.target.classList.add(
+                            "unobserved-project"
+                        );
+
+                    }
+                });
+            },
+            {
+                threshold: 0.15,
+            }
+        );
+
+        projectElements.forEach((project) => {
+            observer.observe(project);
+        });
+
+        return () => observer.disconnect();
+    }, []);
 
     return (
         <>
