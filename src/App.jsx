@@ -4,6 +4,7 @@ import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 import Progetti from './pages/Progetti.jsx';
 import Contatti from './pages/Contatti.jsx';
+import BackgroundCanvas from './BackgroundCanvas.jsx';
 
 function App() {
     const [page, setPage] = useState(0);
@@ -18,12 +19,18 @@ function App() {
 
     return (
         <>
+            <BackgroundCanvas darkMode={darkMode} />
             <Header setPage={setPage} darkMode={darkMode} setDarkMode={setDarkMode} />
 
             <main className={darkClass}>
                 {page === 0 && <Home setPage={setPage} darkClass={darkClass} />}
                 {page === 1 && <About setPage={setPage} darkClass={darkClass} />}
-                {page === 2 && <Progetti setPage={setPage} darkClass={darkClass} />}
+                {page === 2 && (
+                    <Progetti
+                        setPage={setPage}
+                        darkClass={darkClass}
+                    />
+                )}
                 {page === 3 && <Contatti setPage={setPage} darkClass={darkClass} />}
             </main>
         </>

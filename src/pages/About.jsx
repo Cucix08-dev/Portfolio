@@ -32,7 +32,7 @@ export default function About({ darkClass }) {
                 </h2>
 
                 <div id="skills">
-                    {["HTML", "CSS", "JavaScript", "React", "C++" , "Java", "Python"].map((skill) => (
+                    {["HTML", "CSS", "JavaScript", "React", "C++" , "Java", "Python", "Kotlin", "MySQL"].map((skill) => (
                         <div key={skill} className={`skill-item ${darkClass}`}>
                             <span className={`text ${darkClass}`}>{skill}</span>
                         </div>
