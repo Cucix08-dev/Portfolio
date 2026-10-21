@@ -125,7 +125,10 @@ export default function Progetti({ darkClass, setPage }) {
                         key={item.title}
                         className={`project-container ${darkClass}`}
                         >
-                            <img src={`./imgs/${(item.title).replace(/\s+/g, "")}.webp`} alt=""/>
+                            <img 
+                                src={`./imgs/${(item.title).replace(/\s+/g, "")}.webp`} 
+                                alt={`${item.title}`}
+                            />
                             <span className="text title-project">{item.title}</span>
                             <div id="container-button-project">
                                 {item.RepoGithub && (
