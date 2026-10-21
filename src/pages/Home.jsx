@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Progetti from "./Progetti";
+import "./home.css";
 
 export default function Home({ setPage, darkClass }) {
     return (
@@ -55,6 +56,32 @@ export default function Home({ setPage, darkClass }) {
             
             <hr className={`divisor ${darkClass}`} />
 
+            <div id="tools-and-technologies-container" className="container">
+                <div id="technologies">
+                    <h2>Technologies</h2>
+                    <div id="technologies-grid">
+                        {
+                            ["HTML", "CSS", "Javascript", "React", "C++", "Java", "Python", "Kotlin", "SQL"].map((tech, index) => (
+                                <div key={index} className="card">
+                                    <img 
+                                        className="icon"
+                                        src={`./imgs/icons/${tech}.webp`}
+                                        alt={`${tech} logo`}
+                                    />
+                                    <h2>{tech}</h2>
+                                </div>
+                            ))
+                        }
+
+                    </div>
+                </div>
+                <div id="tools">
+                    <h2>Tools</h2>
+                    <div id="tools-grid">
+                        
+                    </div>
+                </div>
+            </div>
         </>
     );
 }

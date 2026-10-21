@@ -126,7 +126,7 @@ export default function Progetti({ darkClass, setPage }) {
                         className={`project-container ${darkClass}`}
                         >
                             <img 
-                                src={`./imgs/${(item.title).replace(/\s+/g, "")}.webp`} 
+                                src={`./imgs/projects-imgs/${(item.title).replace(/\s+/g, "")}.webp`} 
                                 alt={`${item.title}`}
                             />
                             <span className="text title-project">{item.title}</span>
