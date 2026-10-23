@@ -5,7 +5,7 @@ import "./home.css";
 export default function Home({ setPage, darkClass }) {
     return (
         <>
-            <div id="container-presentation">
+            <section id="container-presentation">
                 <div id="presentation" className="container">
                     <h1 className="text title-section">
                         Hey, <span className={`important text ${darkClass}`}>Sono Michele.</span>
@@ -45,43 +45,65 @@ export default function Home({ setPage, darkClass }) {
                             />
                         </svg>
 
-                        <a>
-                            <span className="text">Contatti</span>
-                        </a>
+                        <span className="text">Contatti</span>
                     </div>
                 </div>
 
                 <div id="img-background" className={`${darkClass}`}></div>
-            </div>
+            </section>
             
-            <hr className={`divisor ${darkClass}`} />
+            <hr className={`divisor home-hr ${darkClass}`} />
 
-            <div id="tools-and-technologies-container" className="container">
-                <div id="technologies">
-                    <h2>Technologies</h2>
-                    <div id="technologies-grid">
-                        {
-                            ["HTML", "CSS", "Javascript", "React", "C++", "Java", "Python", "Kotlin", "SQL"].map((tech, index) => (
-                                <div key={index} className="card">
-                                    <img 
-                                        className="icon"
-                                        src={`./imgs/icons/${tech}.webp`}
-                                        alt={`${tech} logo`}
-                                    />
-                                    <h2>{tech}</h2>
-                                </div>
-                            ))
-                        }
-
+            <section>
+                <h2 className="title-big-section">Technologies And Tools</h2>
+                <div id="tools-and-technologies-container">
+                    <div className="container-tt">
+                        <h3>Technologies</h3>
+                        <div className="tools-and-technologies">
+                            {
+                                ["HTML", "CSS", "Javascript", "React", "C++", "Java", "Python", "Kotlin", "SQL"].map((tech, index) => (
+                                    <div key={index} className="card">
+                                        <img 
+                                            className="icon"
+                                            src={`./imgs/icons/technologies/${tech}.webp`}
+                                            alt={`${tech} logo`}
+                                        />
+                                        <h3>{tech}</h3>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </div>
+                    <div className="container-tt">
+                        <h3>Tools</h3>
+                        <div className="tools-and-technologies">
+                            <div className="card">
+                                <img 
+                                    id="github"
+                                    className={`icon ${darkClass}`}
+                                    src={`./imgs/icons/tool/Github.webp`}
+                                    alt={`Github logo`}
+                                />
+                                <h3>Github</h3>
+                            </div>
+                            {
+                                ["Git", "Aseprite", "VSCode", "IntelliJIDEA", "AndroidStudio"].map((tool, index) => (
+                                    <div key={index} className="card">
+                                        <img 
+                                            className="icon"
+                                            src={`./imgs/icons/tool/${tool}.webp`}
+                                            alt={`${tool} logo`}
+                                        />
+                                        <h3>{tool}</h3>
+                                    </div>
+                                ))
+                            }
+                        </div>
                     </div>
                 </div>
-                <div id="tools">
-                    <h2>Tools</h2>
-                    <div id="tools-grid">
-                        
-                    </div>
-                </div>
-            </div>
+            </section>
+
+            <hr className={`divisor home-hr ${darkClass}`} />
         </>
     );
 }

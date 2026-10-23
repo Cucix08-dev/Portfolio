@@ -1,9 +1,10 @@
 import { useState } from "react";
+import "./about.css";
 
 export default function About({ darkClass }) {
     return (
         <>
-            <div id="about" className="container">
+            <section id="about" className="container">
 
                 {/* SEZIONE INTRO */}
                 <div id="container-presentation">
@@ -12,7 +13,9 @@ export default function About({ darkClass }) {
                             Ciao, sono <span className={`important text ${darkClass}`}>Michele</span>
                         </h1>
                         <p className={`text ${darkClass}`}>
-                            Sono un ragazzo di 17 anni, e frequento la scuola superiore, mi appassiona molto lo sviluppo web, imparare a manipolare strutture dati e lavorare con React.js
+                            Sono un ragazzo di 18 anni, e frequento la scuola superiore, 
+                            mi appassiona molto lo sviluppo web, 
+                            imparare a manipolare strutture dati e lavorare con React.js
                         </p>
                     </div>
 
@@ -39,7 +42,7 @@ export default function About({ darkClass }) {
                     ))}
                 </div>
 
-            </div>
+            </section>
         </>
     );
 }

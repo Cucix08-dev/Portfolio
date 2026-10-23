@@ -1,0 +1,53 @@
+#icon-mailbox{
+    width: 32px;
+    height: 32px;
+}
+
+#icon-mailbox.dark{
+    stroke: white !important;
+}
+
+#icon-mailbox.light{
+    stroke: black !important;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin: min(8%,2em) 0;
+}
+
+.container-text {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid;
+    border-radius: 0;
+    padding: 8px 4px;
+    margin-top: 4%;
+    font-family: 'Srotone';
+    font-size: clamp(15px, 2vw, 18px);
+    width: 100%;
+    transition: all 0.2s ease-out;
+}
+
+.container-text.dark {
+    color: white;
+    border-color: rgb(30, 30, 30);
+}
+
+.container-text.light {
+    color: black;
+    border-color: black;
+}
+
+.container-text.dark:focus {
+    border-color: var(--dark-theme);
+}
+
+.container-text.light:focus {
+    border-color: var(--light-theme);
+}
+
+.container-text::placeholder {
+    opacity: 0.4;
+}

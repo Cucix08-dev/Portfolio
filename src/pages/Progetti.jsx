@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./progetti.css";
 
 export default function Progetti({ darkClass, setPage }) {
     const projects = [
@@ -74,33 +75,29 @@ export default function Progetti({ darkClass, setPage }) {
     ]
 
     useEffect(() => {
-        const projectElements =
-            document.querySelectorAll(".project-container");
+        const projects = document.querySelectorAll(".project-container");
 
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
+                    entry.target.classList.toggle(
+                        "show-project",
+                        entry.isIntersecting
+                    );
+
+                    entry.target.classList.toggle(
+                        "unobserved-project",
+                        !entry.isIntersecting
+                    );
 
                     if (entry.isIntersecting) {
-
-                        entry.target.classList.remove(
-                            "unobserved-project"
-                        );
-
-                        entry.target.classList.add(
-                            "show-project"
-                        );
-
+                        console.log("ADD");
+                        entry.target.classList.add("show-project");
+                        entry.target.classList.remove("unobserved-project");
                     } else {
-
-                        entry.target.classList.remove(
-                            "show-project"
-                        );
-
-                        entry.target.classList.add(
-                            "unobserved-project"
-                        );
-
+                        console.log("REMOVE");
+                        entry.target.classList.remove("show-project");
+                        entry.target.classList.add("unobserved-project");
                     }
                 });
             },
@@ -109,9 +106,9 @@ export default function Progetti({ darkClass, setPage }) {
             }
         );
 
-        projectElements.forEach((project) => {
-            observer.observe(project);
-        });
+        projects.forEach((project) =>
+            observer.observe(project)
+        );
 
         return () => observer.disconnect();
     }, []);
@@ -123,7 +120,7 @@ export default function Progetti({ darkClass, setPage }) {
                     {projects.map((item, index) => (
                         <div
                         key={item.title}
-                        className={`project-container ${darkClass}`}
+                        className={`project-container  unobserved-project ${darkClass}`}
                         >
                             <img 
                                 src={`./imgs/projects-imgs/${(item.title).replace(/\s+/g, "")}.webp`} 

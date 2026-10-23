@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./contatti.css";
 import emailjs from "@emailjs/browser";
 
 export default function Contatti({ darkClass }) {
@@ -39,7 +40,7 @@ export default function Contatti({ darkClass }) {
 
     return (
         <>
-            <div id="contact" className="container">
+            <section id="contact" className="container">
                 <h1 className={`title-section ${darkClass}`}>
                     Contattami :)
                 </h1>
@@ -87,7 +88,7 @@ export default function Contatti({ darkClass }) {
                         <span className={`important ${darkClass}`}>Invia</span>
                     </div>
                 </div>
-            </div>
+            </section>
         </>
     );
 }
