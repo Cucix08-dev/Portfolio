@@ -114,7 +114,10 @@ li.nav-buttons{
     align-items: center;
 }
 
-li.nav-buttons, #mode, div.button-nav-extra, .mobile-list{
+li.nav-buttons, 
+#mode, 
+div.button-nav-extra, 
+.mobile-list{
     border-radius: 20px;
     transition: all 0.2s ease-out;
 }
@@ -126,11 +129,16 @@ div.button-nav-extra{
     max-width: 120px;
 }
 
-div.button-nav-extra, li.nav-buttons, #mode{
+div.button-nav-extra, 
+li.nav-buttons, 
+#mode{
     border: 2px solid rgba(0, 0, 0, 0);
 }
 
-div.button-nav-extra:hover, li.nav-buttons:hover, #mode:hover, .mobile-list:hover{
+div.button-nav-extra:hover, 
+li.nav-buttons:hover, 
+#mode:hover, 
+.mobile-list:hover{
     cursor: pointer;
     transform: translateY(-7px);
 }
@@ -139,13 +147,19 @@ div.button-nav-extra:hover, li.nav-buttons:hover, #mode:hover, .mobile-list:hove
     z-index: 100;
 }
 
-div.button-nav-extra.dark:hover, li.nav-buttons.dark:hover, #mode.dark:hover, .mobile-list.dark:hover{
+div.button-nav-extra.dark:hover, 
+li.nav-buttons.dark:hover, 
+#mode.dark:hover, 
+.mobile-list.dark:hover{
     animation: ease-in-nav-button-hover-dark 0.8s ease-in forwards;
 }
 
-div.button-nav-extra.light:hover, li.nav-buttons.light:hover, #mode.light:hover, .mobile-list.light:hover{
+div.button-nav-extra.light:hover, 
+li.nav-buttons.light:hover, 
+#mode.light:hover, 
+.mobile-list.light:hover{
     animation: ease-in-nav-button-hover-light 0.8s ease-in forwards;
-    border: 2px solid black;
+    outline: 2px solid black;
 }
 
 ::selection {
@@ -214,25 +228,31 @@ p.text{
     align-items: flex-start;
 }
 
-.title-project.dark{
-    text-shadow: 0 0 20px var(--glow-project-dark);
-}
-
-.title-project.light{
-    text-shadow: 0 0 20px var(--glow-project-light);
+.important {
+    transition: text-shadow 0.4s ease;
+    font-weight: bold;
 }
 
 .important.dark{
     color: var(--dark-theme) !important;
 }
 
+.important.dark:hover{
+    text-shadow: 0px 0px 30px var(--dark-theme);
+}
+
 .important.light{
     color: var(--light-theme) !important;
+}
+
+.important.light:hover{
+    text-shadow: 0px 0px 30px var(--light-theme);
 }
 
 hr.divisor{
     width: 90%;
     margin: 16px auto;
+    border: solid 1px;
 }
 
 hr.home-hr {
@@ -240,10 +260,12 @@ hr.home-hr {
 }
 
 hr.divisor.dark{
+    box-shadow: 0 0 40px var(--dark-theme);
     border-color: var(--dark-theme);
 }
 
 hr.divisor.light{
+    box-shadow: 0 0 40px var(--light-theme);
     border-color: var(--light-theme);
 }
 
@@ -277,40 +299,21 @@ hr.divisor.light{
     margin: 2px 0 !important;
 }
 
-#foto-profilo {
-    width: clamp(150px, 20vw, 250px);
-    height: clamp(150px, 20vw, 250px);
-    border-radius: 50%;
-    object-fit: cover;
-    margin-left: 40px;
-}
-
-#skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin: 20px 0;
-}
-
-.skill-item, #container-button-project button {
-    padding: 10px 20px;
+.skill-item, .container-button-project button {
     border-radius: 20px;
     border: 2px solid;
     transition: all 0.2s ease-out;
 }
 
-.skill-item.dark, #container-button-project button.dark {
+.skill-item.dark, .container-button-project button.dark {
     border-color: var(--dark-theme);
 }
 
-.skill-item.light, #container-button-project button.light{
+.skill-item.light, .container-button-project button.light{
     border-color: var(--light-theme);
 }
 
-.skill-item:hover {
-    transform: translateY(-7px);
-    cursor: default;
-}
+
 
 /* Altro */
 .dark{
@@ -376,10 +379,6 @@ body.dark::-webkit-scrollbar-thumb:hover {
     background: rgb(144, 245, 144);
 }
 
-
-
-
-
 /* ANIMAZIONI E MEDIA */
 
 @media (min-width:1300px) {
@@ -419,28 +418,13 @@ body.dark::-webkit-scrollbar-thumb:hover {
     }
 
     .project-container .title-project{
-        font-size: 1.5vw;
+        font-size: 2.5vw;
     }
 
-}
-
-@media (max-width:550px) { 
-    #grid-project{
-        grid-template-columns: repeat(1, 1fr) !important;
+    .container-button-project button {
+        font-size: clamp(0.5rem, 1.5vw, 1rem);
     }
 
-    .project-container{
-        width: 90%;
-        font-size: 2vw;
-    }
-
-    .project-container .title-project{
-        font-size: clamp(1rem, 1vw, 1.2rem);
-    }
-
-    #container-button-project button {
-        font-size: clamp(0.7rem, 0.8vw, 1rem);
-    }
 }
 
 @keyframes ease-in-page {

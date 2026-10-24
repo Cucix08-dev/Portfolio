@@ -1,0 +1,23 @@
+#foto-profilo {
+    width: clamp(150px, 20vw, 250px);
+    height: clamp(150px, 20vw, 250px);
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 40px;
+}
+
+#skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.skill-item {
+    padding: 10px 20px;
+}
+
+.skill-item:hover {
+    transform: translateY(-7px);
+    cursor: default;
+}

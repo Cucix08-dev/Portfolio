@@ -80,24 +80,10 @@ export default function Progetti({ darkClass, setPage }) {
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
-                    entry.target.classList.toggle(
-                        "show-project",
-                        entry.isIntersecting
-                    );
-
-                    entry.target.classList.toggle(
-                        "unobserved-project",
-                        !entry.isIntersecting
-                    );
-
                     if (entry.isIntersecting) {
-                        console.log("ADD");
                         entry.target.classList.add("show-project");
-                        entry.target.classList.remove("unobserved-project");
                     } else {
-                        console.log("REMOVE");
                         entry.target.classList.remove("show-project");
-                        entry.target.classList.add("unobserved-project");
                     }
                 });
             },
@@ -106,12 +92,13 @@ export default function Progetti({ darkClass, setPage }) {
             }
         );
 
-        projects.forEach((project) =>
-            observer.observe(project)
-        );
+        projects.forEach((project) => observer.observe(project));
 
-        return () => observer.disconnect();
-    }, []);
+        return () => {
+            projects.forEach((project) => observer.unobserve(project));
+            observer.disconnect();
+        };
+    }, [darkClass]); 
 
     return (
         <>
@@ -120,14 +107,14 @@ export default function Progetti({ darkClass, setPage }) {
                     {projects.map((item, index) => (
                         <div
                         key={item.title}
-                        className={`project-container  unobserved-project ${darkClass}`}
+                        className={`project-container ${darkClass}`}
                         >
                             <img 
                                 src={`./imgs/projects-imgs/${(item.title).replace(/\s+/g, "")}.webp`} 
                                 alt={`${item.title}`}
                             />
                             <span className="text title-project">{item.title}</span>
-                            <div id="container-button-project">
+                            <div className="container-button-project">
                                 {item.RepoGithub && (
                                     <button
                                         className={`REP-Github ${darkClass}`}

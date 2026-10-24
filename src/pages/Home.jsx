@@ -63,11 +63,15 @@ export default function Home({ setPage, darkClass }) {
                             {
                                 ["HTML", "CSS", "Javascript", "React", "C++", "Java", "Python", "Kotlin", "SQL"].map((tech, index) => (
                                     <div key={index} className="card">
-                                        <img 
-                                            className="icon"
-                                            src={`./imgs/icons/technologies/${tech}.webp`}
-                                            alt={`${tech} logo`}
-                                        />
+                                        <div className={`icon-wrapper ${darkClass}`} id={tech.toLowerCase().replace(/\+/g, "p")}>
+                                            <img 
+                                                id={`${tech.toLowerCase().replace(/\+/g, "p") + '-img'}`}
+                                                className={`icon ${darkClass}`}
+                                                src={`./imgs/icons/technologies/${tech}.webp`}
+                                                alt={`${tech} logo`}
+                                            />
+                                        </div>
+
                                         <h3>{tech}</h3>
                                     </div>
                                 ))
@@ -77,23 +81,18 @@ export default function Home({ setPage, darkClass }) {
                     <div className="container-tt">
                         <h3>Tools</h3>
                         <div className="tools-and-technologies">
-                            <div className="card">
-                                <img 
-                                    id="github"
-                                    className={`icon ${darkClass}`}
-                                    src={`./imgs/icons/tool/Github.webp`}
-                                    alt={`Github logo`}
-                                />
-                                <h3>Github</h3>
-                            </div>
                             {
-                                ["Git", "Aseprite", "VSCode", "IntelliJIDEA", "AndroidStudio"].map((tool, index) => (
+                                ["Github", "Git", "Aseprite", "VSCode", "IntelliJIDEA", "AndroidStudio"].map((tool, index) => (
                                     <div key={index} className="card">
-                                        <img 
-                                            className="icon"
-                                            src={`./imgs/icons/tool/${tool}.webp`}
-                                            alt={`${tool} logo`}
-                                        />
+                                        <div className={`icon-wrapper ${darkClass}`} id={tool.toLowerCase()}>
+                                            <img
+                                                id={`${tool.toLowerCase() + '-img'}`}
+                                                className={`icon ${darkClass}`}
+                                                src={`./imgs/icons/tool/${tool}.webp`}
+                                                alt={`${tool} logo`}
+                                            />
+                                        </div>
+                                        
                                         <h3>{tool}</h3>
                                     </div>
                                 ))
