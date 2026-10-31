@@ -9,6 +9,8 @@ import BackgroundCanvas from './BackgroundCanvas.jsx';
 function App() {
     const [page, setPage] = useState(0);
     const [darkMode, setDarkMode] = useState(true);
+    const [englishLanguage, setEnglishLanguage] = useState(false);
+
 
     const darkClass = darkMode ? "dark" : "light";
 
@@ -20,7 +22,7 @@ function App() {
     return (
         <>
             <BackgroundCanvas darkMode={darkMode} />
-            <Header setPage={setPage} darkMode={darkMode} setDarkMode={setDarkMode} />
+            <Header setPage={setPage} darkMode={darkMode} setDarkMode={setDarkMode} englishLanguage={englishLanguage} setEnglishLanguage={setEnglishLanguage}/>
 
             <main className={darkClass}>
                 {page === 0 && <Home setPage={setPage} darkClass={darkClass} />}

@@ -82,8 +82,10 @@ export default function Progetti({ darkClass, setPage }) {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("show-project");
+                        entry.target.classList.remove("unobserved-project");
                     } else {
                         entry.target.classList.remove("show-project");
+                        entry.target.classList.add("unobserved-project");
                     }
                 });
             },
@@ -98,7 +100,7 @@ export default function Progetti({ darkClass, setPage }) {
             projects.forEach((project) => observer.unobserve(project));
             observer.disconnect();
         };
-    }, [darkClass]); 
+    }, [darkClass]);
 
     return (
         <>

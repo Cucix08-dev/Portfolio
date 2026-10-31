@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
-export default function Header({ setPage, darkMode, setDarkMode }) {
+export default function Header({ setPage, darkMode, setDarkMode, englishLanguage, setEnglishLanguage}) {
     const darkClass = darkMode ? "dark" : "light";
     const [menuOpen, setMenuOpen] = useState(false);
     const menuRef = useRef(null);
@@ -99,6 +99,9 @@ export default function Header({ setPage, darkMode, setDarkMode }) {
                                     <svg id="luna" width="48" height="48" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style={{ transform: "translateX(10px)" }} className={darkClass}>
                                         <path d="M40 20 A40 40 0 1 0 60 100 A25 40 0 1 1 60 20 Z" fill="black" stroke="white" strokeWidth="4" />
                                     </svg>
+                                </li>
+                                <li id="language" className={`${darkClass} nav-buttons`} onClick={() => setEnglishLanguage(!englishLanguage)}>
+
                                 </li>
                             </ul>
                         )}

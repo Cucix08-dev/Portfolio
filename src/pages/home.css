@@ -16,7 +16,7 @@
 }
 
 .container-tt {
-    width: 90%;
+    width: clamp(120px, 90%, 469px);
     min-width: 120px;
     border: solid 2px;
     border-radius: 20px;
@@ -28,7 +28,7 @@
     flex-wrap: wrap;
 }
 
-.container-tt > h3{
+.container-tt > h2{
     text-align: center;
     margin-top: 8px;
     font-size: clamp(1rem, 3vw, 1.6rem);
@@ -83,7 +83,10 @@
     border-radius: 20px;
     transition: transform 0.4s ease;
     cursor: pointer;
-    font-size: clamp(0.4rem, 1vw, 1.5rem);
+}
+
+.card > h3 {
+    font-size: clamp(0.7rem, 1vw, 1rem);
 }
 
 .card:hover {
@@ -95,24 +98,24 @@
 
 .card:hover #git::before, .card:hover #html::before  {
     background-color: rgba(192, 61, 0, 0.5);
-    box-shadow: 0 0 25px 15px rgb(192, 61, 0);
+    box-shadow: 0 0 25px 1vw rgb(192, 61, 0);
 }
 
 .card:hover #github.dark::before {
     background-color: rgba(255,255,255,0.5);
-    box-shadow: 0 0 25px 15px white;
+    box-shadow: 0 0 25px 1vw white;
 }
 
 .card:hover #github.light::before {
-    box-shadow: 0 0 25px 15px black;
+    box-shadow: 0 0 25px 1vw black;
 }
 
 .card:hover #aseprite.dark::before {
-    box-shadow: 0 0 25px 15px rgb(189, 154, 202);
+    box-shadow: 0 0 25px 1vw rgb(189, 154, 202);
 }
 
 .card:hover #aseprite.light::before {
-    box-shadow: 0 0 25px 15px rgb(116, 94, 124);
+    box-shadow: 0 0 25px 1vw rgb(116, 94, 124);
 }
 
 .card:hover #vscode::before,
@@ -120,54 +123,54 @@
 .card:hover #cpp::before,
 .card:hover #sql::before{
     background-color: rgb(41, 138, 248, 0.5);
-    box-shadow: 0 0 25px 15px rgb(41, 138, 248);
+    box-shadow: 0 0 25px 1vw rgb(41, 138, 248);
 }
 
 .card:hover #css::before{
-    box-shadow: 0 0 25px 15px rgb(4, 54, 255);
+    box-shadow: 0 0 25px 1vw rgb(4, 54, 255);
 }
 
 .card:hover #python::before{
     box-shadow:
-        -2px -2px 25px 15px rgb(56, 81, 179),
-        2px 2px 25px 15px rgb(255, 252, 90);
+        -2px -2px 25px 1vw rgb(56, 81, 179),
+        2px 2px 25px 1vw rgb(255, 252, 90);
 }
 
 .card:hover #javascript::before{
-    box-shadow: 0 0 25px 15px rgb(255, 252, 90);
+    box-shadow: 0 0 25px 1vw rgb(255, 252, 90);
 }
 
 .card:hover #react::before{
     background-color: rgba(90, 225, 255, 0.5);
-    box-shadow: 0 0 25px 15px rgb(130, 224, 246);
+    box-shadow: 0 0 25px 1vw rgb(130, 224, 246);
 }
 
 .card:hover #java.dark::before {
     background-color: rgb(37, 51, 77);
     box-shadow:
-        0 0 25px 15px rgb(37, 51, 77),
-        0 -5px 25px 15px rgb(120, 76, 0);
+        0 0 25px 1vw rgb(37, 51, 77),
+        0 -5px 25px 1vw rgb(120, 76, 0);
 }
 
 .card:hover #java.light::before {
     background-color: rgba(121, 168, 255, 0.509);
     box-shadow:
-        0 0 25px 15px rgb(121, 168, 255),
-        0 -5px 25px 15px rgb(251, 159, 0);
+        0 0 25px 1vw rgb(121, 168, 255),
+        0 -5px 25px 1vw rgb(251, 159, 0);
 }
 
 .card:hover #kotlin::before {
     background-color: rgba(153, 106, 255, 0.6);
     box-shadow: 
-        -2px -5px 25px 15px rgb(45, 153, 247),
-        0 0 25px 8px rgb(255, 157, 29),
-        2px 5px 25px 15px rgb(153, 106, 255);
+        -2px -5px 25px 1vw rgb(45, 153, 247),
+        0 0 25px 0.8vw rgb(255, 157, 29),
+        2px 5px 25px 1vw rgb(153, 106, 255);
 }
 
 .card:hover #intellijidea::before {
     box-shadow:
-        -4px 1px 25px 10px rgb(248, 72, 41),
-        4px -1px 25px 10px rgb(41, 138, 248);
+        -4px 1px 25px 1vw rgb(248, 72, 41),
+        4px -1px 25px 1vw rgb(41, 138, 248);
 }
 
 #img-background.dark {
@@ -190,8 +193,94 @@
 }
 
 
+@media (max-width: 550px) {
+    
+    .card:hover #git::before, .card:hover #html::before  {
+        box-shadow: 0 0 25px 2.4vw rgb(192, 61, 0);
+    }
+
+    .card:hover #github.dark::before {
+        box-shadow: 0 0 25px 2.4vw white;
+    }
+
+    .card:hover #github.light::before {
+        box-shadow: 0 0 25px 2.4vw black;
+    }
+
+    .card:hover #aseprite.dark::before {
+        box-shadow: 0 0 25px 2.4vw rgb(189, 154, 202);
+    }
+
+    .card:hover #aseprite.light::before {
+        box-shadow: 0 0 25px 2.4vw rgb(116, 94, 124);
+    }
+
+    .card:hover #vscode::before,
+    .card:hover #androidstudio::before, 
+    .card:hover #cpp::before,
+    .card:hover #sql::before{
+        box-shadow: 0 0 25px 2.4vw rgb(41, 138, 248);
+    }
+
+    .card:hover #css::before{
+        box-shadow: 0 0 25px 2.4vw rgb(4, 54, 255);
+    }
+
+    .card:hover #python::before{
+        box-shadow:
+            -2px -2px 25px 2.4vw rgb(56, 81, 179),
+            2px 2px 25px 2.4vw rgb(255, 252, 90);
+    }
+
+    .card:hover #javascript::before{
+        box-shadow: 0 0 25px 2.4vw rgb(255, 252, 90);
+    }
+
+    .card:hover #react::before{
+        box-shadow: 0 0 25px 2.4vw rgb(130, 224, 246);
+    }
+
+    .card:hover #java.dark::before {
+        box-shadow:
+            0 0 25px 2.4vw rgb(37, 51, 77),
+            0 -5px 25px 2.4vw rgb(120, 76, 0);
+    }
+
+    .card:hover #java.light::before {
+        background-color: rgba(121, 168, 255, 0.509);
+        box-shadow:
+            0 0 25px 2.4vw rgb(121, 168, 255),
+            0 -5px 25px 2.4vw rgb(251, 159, 0);
+    }
+
+    .card:hover #kotlin::before {
+        background-color: rgba(153, 106, 255, 0.6);
+        box-shadow: 
+            -2px -5px 25px 2.4vw rgb(45, 153, 247),
+            0 0 25px 2vw rgb(255, 157, 29),
+            2px 5px 25px 2.4vw rgb(153, 106, 255);
+    }
+
+    .card:hover #intellijidea::before {
+        box-shadow:
+            -4px 1px 25px 2.4vw rgb(248, 72, 41),
+            4px -1px 25px 2.4vw rgb(41, 138, 248);
+    }
+}
+
+
 @media (max-width: 470px) {
     #tools-and-technologies-container {
         flex-direction: column;
+    }
+}
+
+@media (max-width: 350px) {
+    .card {
+        padding: 10px;
+    }
+
+    .card > h3 {
+        display: none;
     }
 }
