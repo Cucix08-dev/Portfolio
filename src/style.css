@@ -407,6 +407,10 @@ body.dark::-webkit-scrollbar-thumb:hover {
         display: block;
     }
 
+    #pages #language{
+        display: block;
+    }
+
     #img-background {
         display: none !important;
     }

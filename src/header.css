@@ -1,0 +1,20 @@
+#language, .flag  {
+    width: 2.5vw;
+}
+
+#language :nth-child(2) {
+    transform: translateX(-100%);
+}
+
+.flag {
+    aspect-ratio: 18/12;
+    transition: opacity 0.4s ease;
+}
+
+.flag.selected-flag {
+    opacity: 1;
+}
+
+.flag.unselected-flag {
+    opacity: 0;
+}

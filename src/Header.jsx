@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import "./header.css";
 
 export default function Header({ setPage, darkMode, setDarkMode, englishLanguage, setEnglishLanguage}) {
     const darkClass = darkMode ? "dark" : "light";
@@ -60,6 +61,11 @@ export default function Header({ setPage, darkMode, setDarkMode, englishLanguage
                         </svg>
                     </li>
 
+                    <li id="language" className={`${darkClass} nav-buttons`} onClick={() => setEnglishLanguage(!englishLanguage)}>
+                        <img className="flag unselected-flag" src="https://flagcdn.com/h20/gb.png" alt="Bandiera inglese" />
+                        <img className="flag selected-flag" src="https://flagcdn.com/h20/it.png" alt="Bandiera italiana" />
+                    </li>
+
                     <li
                         id="pages"
                         ref={menuRef}
@@ -101,7 +107,8 @@ export default function Header({ setPage, darkMode, setDarkMode, englishLanguage
                                     </svg>
                                 </li>
                                 <li id="language" className={`${darkClass} nav-buttons`} onClick={() => setEnglishLanguage(!englishLanguage)}>
-
+                                    <img className="flag unselected-flag" src="https://flagcdn.com/h20/gb.png" alt="Bandiera inglese" />
+                                    <img className="flag selected-flag" src="https://flagcdn.com/h20/it.png" alt="Bandiera italiana" />
                                 </li>
                             </ul>
                         )}
