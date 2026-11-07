@@ -11,6 +11,18 @@ export default function Header({ setPage, darkMode, setDarkMode, englishLanguage
         setMenuOpen(false);
     };
 
+    const [animateFlag, setAnimateFlag] = useState(false);
+
+    const changeLanguage = () => {
+        setAnimateFlag(false);
+
+        setTimeout(() => {
+            setAnimateFlag(true);
+        }, 10);
+
+        setEnglishLanguage(!englishLanguage);
+    };
+
     useEffect(() => {
         const handleClickOutside = (e) => {
             if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -38,10 +50,10 @@ export default function Header({ setPage, darkMode, setDarkMode, englishLanguage
                         <a><span className="text">About</span></a>
                     </li>
                     <li onClick={() => handlePage(2)} className={`nav-buttons ${darkClass}`}>
-                        <a><span className="text">Progetti</span></a>
+                        <a><span className="text" data-en="Projects">Progetti</span></a>
                     </li>
                     <li onClick={() => handlePage(3)} className={`nav-buttons ${darkClass}`}>
-                        <a><span className="text">Contatti</span></a>
+                        <a><span className="text" data-en="Contacts">Contatti</span></a>
                     </li>
 
                     <li id="mode" className={`${darkClass} nav-buttons`} onClick={() => setDarkMode(!darkMode)}>
@@ -61,9 +73,20 @@ export default function Header({ setPage, darkMode, setDarkMode, englishLanguage
                         </svg>
                     </li>
 
-                    <li id="language" className={`${darkClass} nav-buttons`} onClick={() => setEnglishLanguage(!englishLanguage)}>
-                        <img className="flag unselected-flag" src="https://flagcdn.com/h20/gb.png" alt="Bandiera inglese" />
-                        <img className="flag selected-flag" src="https://flagcdn.com/h20/it.png" alt="Bandiera italiana" />
+                    <li
+                        id="language"
+                        className={`${darkClass} nav-buttons`}
+                        onClick={changeLanguage}
+                    >
+                        <img
+                            className={`flag selected-flag ${animateFlag ? "animate-flag" : ""}`}
+                            src={englishLanguage
+                                ? "https://flagcdn.com/h20/gb.png"
+                                : "https://flagcdn.com/h20/it.png"}
+                            alt={englishLanguage
+                                ? "United Kingdom flag"
+                                : "Bandiera italiana"}
+                        />
                     </li>
 
                     <li
@@ -106,9 +129,20 @@ export default function Header({ setPage, darkMode, setDarkMode, englishLanguage
                                         <path d="M40 20 A40 40 0 1 0 60 100 A25 40 0 1 1 60 20 Z" fill="black" stroke="white" strokeWidth="4" />
                                     </svg>
                                 </li>
-                                <li id="language" className={`${darkClass} nav-buttons`} onClick={() => setEnglishLanguage(!englishLanguage)}>
-                                    <img className="flag unselected-flag" src="https://flagcdn.com/h20/gb.png" alt="Bandiera inglese" />
-                                    <img className="flag selected-flag" src="https://flagcdn.com/h20/it.png" alt="Bandiera italiana" />
+                                <li
+                                    id="language"
+                                    className={`${darkClass} nav-buttons`}
+                                    onClick={changeLanguage}
+                                >
+                                    <img
+                                        className={`flag selected-flag ${animateFlag ? "animate-flag" : ""}`}
+                                        src={englishLanguage
+                                            ? "https://flagcdn.com/h20/gb.png"
+                                            : "https://flagcdn.com/h20/it.png"}
+                                        alt={englishLanguage
+                                            ? "United Kingdom flag"
+                                            : "Bandiera italiana"}
+                                    />
                                 </li>
                             </ul>
                         )}

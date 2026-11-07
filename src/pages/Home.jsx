@@ -68,7 +68,7 @@ export default function Home({ setPage, darkClass }) {
                             />
                         </svg>
 
-                        <span className="text">Contatti</span>
+                        <span className="text" data-en="Contacts">Contatti</span>
                     </div>
                 </div>
 
@@ -78,7 +78,7 @@ export default function Home({ setPage, darkClass }) {
             <hr className={`divisor home-hr ${darkClass}`} />
 
             <section>
-                <h2 className="title-big-section">Tecnologie e Strumenti</h2>
+                <h2 className="title-big-section" data-en="Technologies & Tools">Tecnologie e Strumenti</h2>
                 <p 
                     data-en="
                         I am proficient in a wide range of technologies and programming languages, 
@@ -111,7 +111,7 @@ export default function Home({ setPage, darkClass }) {
                 </p>
                 <div id="tools-and-technologies-container">
                     <div className="container-tt">
-                        <h2>Tecnologie</h2>
+                        <h2 data-en="Technologies">Tecnologie</h2>
                         <div className="tools-and-technologies">
                             {
                                 ["HTML", "CSS", "Javascript", "React", "C++", "Java", "Python", "Kotlin", "SQL"].map((tech, index) => (
@@ -132,7 +132,7 @@ export default function Home({ setPage, darkClass }) {
                         </div>
                     </div>
                     <div className="container-tt">
-                        <h2>Strumenti</h2>
+                        <h2 data-en="Tools">Strumenti</h2>
                         <div className="tools-and-technologies">
                             {
                                 ["Github", "Git", "Aseprite", "VSCode", "IntelliJIDEA", "AndroidStudio"].map((tool, index) => (

@@ -59,7 +59,7 @@ export default function Contatti({ darkClass }) {
                     </div>
 
                     <div className={`form-group ${darkClass}`}>
-                        <label className={`text ${darkClass}`} htmlFor="subject">Oggetto</label>
+                        <label className={`text ${darkClass}`} htmlFor="subject" data-en="Object">Oggetto</label>
                         <input
                             id="subject"
                             type="text"
@@ -71,7 +71,7 @@ export default function Contatti({ darkClass }) {
                     </div>
 
                     <div className={`form-group ${darkClass}`}>
-                        <label className={`text ${darkClass}`} htmlFor="message">Messaggio</label>
+                        <label className={`text ${darkClass}`} htmlFor="message" data-en="Message">Messaggio</label>
                         <textarea
                             id="message"
                             className={`text container-text ${darkClass}`}
@@ -85,7 +85,7 @@ export default function Contatti({ darkClass }) {
                         className={`button-nav-extra ${darkClass}`}
                         onClick={handleSubmit}
                     >
-                        <span className={`important ${darkClass}`}>Invia</span>
+                        <span className={`important ${darkClass}`} data-en="Send">Invia</span>
                     </div>
                 </div>
             </section>
