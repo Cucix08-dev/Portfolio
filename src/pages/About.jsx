@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./about.css";
 
-export default function About({ darkClass }) {
+export default function About({ darkClass , englishLanguage }) {
     return (
         <>
             <section id="about" className="container">
@@ -9,13 +9,34 @@ export default function About({ darkClass }) {
                 {/* SEZIONE INTRO */}
                 <div id="container-presentation">
                     <div id="presentation">
-                        <h1 className={`title-section ${darkClass}`} data-en="Hi, i am <span className={`important text ${darkClass}`}>Michele</span>">
-                            Ciao, sono <span className={`important text ${darkClass}`}>Michele</span>
+                        <h1 className={`title-section ${darkClass}`}>
+                            {
+                                englishLanguage?
+                                <>Hi, i am <span className={`important text ${darkClass}`}>Michele</span></> :
+                                <>Ciao, sono <span className={`important text ${darkClass}`}>Michele</span></>
+                            }
+                            
                         </h1>
-                        <p className={`text ${darkClass}`} data-en="I am an 18-year-old high school student. I am very passionate about web development, learning how to manipulate data structures, and working with React.js.">
-                            Sono un ragazzo di 18 anni, e frequento la scuola superiore, 
-                            mi appassiona molto lo sviluppo web, 
-                            imparare a manipolare strutture dati e lavorare con React.js
+                        <p className={`text ${darkClass}`}>
+                            {
+                                englishLanguage?
+                                (
+                                    <>
+                                        I am an 18-year-old high school student. 
+                                        I am very passionate about web development, 
+                                        learning how to manipulate data structures, 
+                                        and working with React.js.
+                                    </>
+                                ) : (
+                                    <>
+                                        Sono un ragazzo di 18 anni, e frequento la scuola superiore, 
+                                        mi appassiona molto lo sviluppo web, 
+                                        imparare a manipolare strutture dati e lavorare con React.js
+                                    </>
+                                )
+                            }
+
+                            
                         </p>
                     </div>
 
@@ -30,8 +51,13 @@ export default function About({ darkClass }) {
                 <hr className={`divisor ${darkClass}`} />
 
                 {/* SEZIONE SKILLS */}
-                <h2 className={`title-section ${darkClass}`} data-en="My <span className={`important ${darkClass}`}>Skills</span>">
-                    Le mie <span className={`important ${darkClass}`}>Skills</span>
+                <h2 className={`title-section ${darkClass}`}>
+                    {
+                        englishLanguage?
+                        <>My <span className={`important ${darkClass}`}>Skills</span></> :
+                        <>Le mie <span className={`important ${darkClass}`}>Skills</span></>
+                    }
+                    
                 </h2>
 
                 <div id="skills">

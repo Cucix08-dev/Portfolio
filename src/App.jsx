@@ -19,21 +19,36 @@ function App() {
         document.body.classList.toggle("light", !darkMode);
     }, [darkMode]);
 
+    useEffect(() => {
+    const elements = document.querySelectorAll("[data-en]");
+
+    elements.forEach(el => {
+        if (!el.dataset.it) {
+            el.dataset.it = el.innerHTML;
+        }
+
+        el.innerHTML = englishLanguage
+            ? el.dataset.en
+            : el.dataset.it;
+        });
+    }, [englishLanguage, darkClass]);
+
     return (
         <>
             <BackgroundCanvas darkMode={darkMode} />
             <Header setPage={setPage} darkMode={darkMode} setDarkMode={setDarkMode} englishLanguage={englishLanguage} setEnglishLanguage={setEnglishLanguage}/>
 
             <main className={darkClass}>
-                {page === 0 && <Home setPage={setPage} darkClass={darkClass} />}
-                {page === 1 && <About setPage={setPage} darkClass={darkClass} />}
+                {page === 0 && <Home setPage={setPage} darkClass={darkClass} englishLanguage={englishLanguage}/>}
+                {page === 1 && <About setPage={setPage} darkClass={darkClass} englishLanguage={englishLanguage}/>}
                 {page === 2 && (
                     <Progetti
                         setPage={setPage}
                         darkClass={darkClass}
+                        englishLanguage={englishLanguage}
                     />
                 )}
-                {page === 3 && <Contatti setPage={setPage} darkClass={darkClass} />}
+                {page === 3 && <Contatti setPage={setPage} darkClass={darkClass} englishLanguage={englishLanguage}/>}
             </main>
         </>
     );

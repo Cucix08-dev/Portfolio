@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./contatti.css";
 import emailjs from "@emailjs/browser";
 
-export default function Contatti({ darkClass }) {
+export default function Contatti({ darkClass, englishLanguage }) {
     const [email, setEmail] = useState("");
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
@@ -42,7 +42,11 @@ export default function Contatti({ darkClass }) {
         <>
             <section id="contact" className="container">
                 <h1 className={`title-section ${darkClass}`}>
-                    Contattami :)
+                    {
+                        englishLanguage? 
+                        <>Contact me :)</> :
+                        <>Contattami :)</>
+                    }
                 </h1>
 
                 <div id="contact">
@@ -52,7 +56,11 @@ export default function Contatti({ darkClass }) {
                             id="email"
                             type="email"
                             className={`text container-text ${darkClass}`}
-                            placeholder="la-tua@email.com"
+                            placeholder={
+                                englishLanguage
+                                    ? "your-email@email.com"
+                                    : "la-tua-email@email.com"
+                            }
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
@@ -64,7 +72,10 @@ export default function Contatti({ darkClass }) {
                             id="subject"
                             type="text"
                             className={`text container-text ${darkClass}`}
-                            placeholder="Oggetto del messaggio"
+                            placeholder={englishLanguage ?
+                                "Object of message" :    
+                                "Oggetto del messaggio"
+                            }
                             value={subject}
                             onChange={(e) => setSubject(e.target.value)}
                         />
@@ -75,7 +86,11 @@ export default function Contatti({ darkClass }) {
                         <textarea
                             id="message"
                             className={`text container-text ${darkClass}`}
-                            placeholder="Scrivi il tuo messaggio..."
+                            placeholder={
+                                englishLanguage
+                                    ? "Write your message..."
+                                    : "Scrivi il tuo messaggio..."
+                            }
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}
                         />
@@ -85,7 +100,13 @@ export default function Contatti({ darkClass }) {
                         className={`button-nav-extra ${darkClass}`}
                         onClick={handleSubmit}
                     >
-                        <span className={`important ${darkClass}`} data-en="Send">Invia</span>
+                        <span className={`important ${darkClass}`}>
+                            {
+                                englishLanguage?
+                                <>Send</> :
+                                <>Invia</>
+                            }
+                        </span>
                     </div>
                 </div>
             </section>
