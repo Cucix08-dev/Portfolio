@@ -203,14 +203,18 @@ export default function Home({
                         {englishLanguage?
                             (
                                 <>
-                                    This is the <span className={`important ${darkClass}`}>first pixel art</span>
-                                    I have ever created. I made it on <span className={`important ${darkClass}`}>June 1, 2024</span>
+                                    This is the <span className={`important ${darkClass}`}>first pixel art </span> 
+                                    I have ever created. 
+                                    <br />
+                                    I made it on <span className={`important ${darkClass}`}>June 1, 2024 </span>
                                     using <span className={`important ${darkClass}`}>Aseprite</span>,
                                     mainly out of curiosity and to try something different from my usual projects.
-
+                                    <br />
                                     By clicking on the image, you can also view the original reference that I manually
-                                    recreated in pixel art. The subject is the logo of the metal band
-                                    <span className={`important ${darkClass}`}>Death</span>, chosen because it was
+                                    recreated in pixel art. 
+                                    <br />
+                                    The subject is the logo of the metal band
+                                    <span className={`important ${darkClass}`}> Death</span>, chosen because it was
                                     relatively simple to reproduce and well suited for a first experiment with this
                                     technique.
                                 </>
@@ -239,10 +243,11 @@ export default function Home({
                             (
                                 <>
                                     This is another pixel art piece, created on <span className={`important ${darkClass}`}>October 1, 2024</span>.
+                                    <br />
                                     I wanted to try creating something a bit more detailed than my previous works while
                                     still keeping the overall design relatively simple.
-
-                                    I chose to draw <span className={`important ${darkClass}`}>Dante Alighieri</span>
+                                    <br />
+                                    I chose to draw <span className={`important ${darkClass}`}>Dante Alighieri </span>
                                     because I was studying him at school at the time, and I thought he would be an
                                     interesting subject to reinterpret in pixel art.
                                 </>
