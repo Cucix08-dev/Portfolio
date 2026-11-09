@@ -239,7 +239,7 @@
 
 #dante {
     aspect-ratio: 1/1;
-    background-image: url("./imgs/arts/Dante Alighieri x5.webp");
+    background-image: url("/imgs/arts/Dante Alighieri x5.webp");
     background-position: center center;
 }
 
@@ -250,7 +250,7 @@
 
 #death {
     aspect-ratio: 1018/886; 
-    background-image: url("./imgs/arts/Death_Band_Logox5.webp");
+    background-image: url("/imgs/arts/Death_Band_Logox5.webp");
     background-position: center center;
 }
 
