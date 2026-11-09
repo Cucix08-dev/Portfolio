@@ -192,6 +192,30 @@
     display: none;
 }
 
+#arts-with-description-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 40px;
+}
+
+#arts-with-description-container a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#arts-with-description-container a img {
+    width: 70%;
+    filter: brightness(1);
+    border-radius: 40px;
+
+    transition: filter 0.4s ease;
+}
+
+#arts-with-description-container a img:hover {
+    filter: brightness(1.2);
+}
 
 @media (max-width: 550px) {
     

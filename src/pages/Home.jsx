@@ -101,7 +101,9 @@ export default function Home({
             <hr className={`divisor home-hr ${darkClass}`} />
 
             <section>
-                <h2 className="title-big-section" data-en="Technologies & Tools">Tecnologie e Strumenti</h2>
+                <h2 className="title-big-section">
+                    {englishLanguage? <>Technologies & Tools</>:<>Tecnologie e Strumenti</>}
+                </h2>
                 <p 
                     style={{
                         width: "60vw",
@@ -185,6 +187,90 @@ export default function Home({
             </section>
 
             <hr className={`divisor home-hr ${darkClass}`} />
+
+            <section style={{
+                width: "80%",
+                margin: "0 auto"
+            }}>
+                <h2 className="title-big-section">
+                    {englishLanguage? <>Arts</>:<>Disegni</>}
+                </h2>
+                <div id="arts-with-description-container">
+                    <a href="https://www.metal-archives.com/images/1/4/1/141_logo.png?3006" target="_blank">
+                        <img src="./imgs/arts/Death_Band_Logox5.png" alt="" />
+                    </a>
+                    <p>
+                        {englishLanguage?
+                            (
+                                <>
+                                    This is the <span className={`important ${darkClass}`}>first pixel art</span>
+                                    I have ever created. I made it on <span className={`important ${darkClass}`}>June 1, 2024</span>
+                                    using <span className={`important ${darkClass}`}>Aseprite</span>,
+                                    mainly out of curiosity and to try something different from my usual projects.
+
+                                    By clicking on the image, you can also view the original reference that I manually
+                                    recreated in pixel art. The subject is the logo of the metal band
+                                    <span className={`important ${darkClass}`}>Death</span>, chosen because it was
+                                    relatively simple to reproduce and well suited for a first experiment with this
+                                    technique.
+                                </>
+                            ):(
+                                <>
+                                    Questa è la <span className={`important ${darkClass}`}>prima pixel art </span> 
+                                    che abbia mai realizzato.
+                                    <br /> 
+                                    L'ho creata il <span className={`important ${darkClass}`}>1 giugno 2024 </span> 
+                                    utilizzando <span className={`important ${darkClass}`}>Aseprite</span>, 
+                                    principalmente per curiosità e per provare qualcosa di diverso rispetto ai 
+                                    miei progetti abituali.
+                                    Cliccando sull'immagine è possibile visualizzare il riferimento originale che 
+                                    ho cercato di ricreare manualmente in pixel art. 
+                                    <br />
+                                    Il soggetto è il logo della band 
+                                    metal <span className={`important ${darkClass}`}>Death</span>, scelto perché 
+                                    abbastanza semplice da riprodurre e adatto a un primo esperimento con questa 
+                                    tecnica.
+                                </>
+                            )
+                        }
+                    </p>
+                    <p>
+                        {englishLanguage?
+                            (
+                                <>
+                                    This is another pixel art piece, created on <span className={`important ${darkClass}`}>October 1, 2024</span>.
+                                    I wanted to try creating something a bit more detailed than my previous works while
+                                    still keeping the overall design relatively simple.
+
+                                    I chose to draw <span className={`important ${darkClass}`}>Dante Alighieri</span>
+                                    because I was studying him at school at the time, and I thought he would be an
+                                    interesting subject to reinterpret in pixel art.
+                                </>
+                            ):(
+                                <>
+                                    Questa è un'altra pixel art, realizzata il <span className={`important ${darkClass}`}>1 ottobre 2024</span>.
+                                    Dopo il mio primo esperimento, ho deciso di provare un soggetto leggermente più articolato,
+                                    pur mantenendo un livello di complessità adatto alle mie competenze del momento.
+
+                                    Ho scelto di rappresentare <span className={`important ${darkClass}`}>Dante Alighieri</span>,
+                                    figura che stavo studiando a scuola in quel periodo. L'idea è nata proprio durante lo
+                                    studio della sua opera e della sua importanza nella letteratura italiana, trasformando
+                                    un argomento scolastico in un piccolo progetto creativo personale.
+                                </>
+                            )
+                        }
+                    </p>
+                    <a href="//thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Portrait_de_Dante.jpg/250px-Portrait_de_Dante.jpg?utm_source=it.wikipedia.org&utm_campaign=parser&utm_content=thumbnail" target="_blank">
+                        <img src="./imgs/arts/Dante Alighieri x5.png" alt=""/>
+                    </a>
+                    {/*
+                        Successivamente applicare un animazione 
+                        che permette all'utente di vedere la foto
+                        originale direttamente mettendo il cursore sopra 
+                        di esso, sostituendo l'immagine pixel.
+                    */}
+                </div>
+            </section>
         </>
     );
 }
