@@ -196,9 +196,7 @@ export default function Home({
                     {englishLanguage? <>Arts</>:<>Disegni</>}
                 </h2>
                 <div id="arts-with-description-container">
-                    <a href="https://www.metal-archives.com/images/1/4/1/141_logo.png?3006" target="_blank">
-                        <img src="./imgs/arts/Death_Band_Logox5.png" alt="" />
-                    </a>
+                    <div id="death"></div>
                     <p>
                         {englishLanguage?
                             (
@@ -209,9 +207,6 @@ export default function Home({
                                     I made it on <span className={`important ${darkClass}`}>June 1, 2024 </span>
                                     using <span className={`important ${darkClass}`}>Aseprite</span>,
                                     mainly out of curiosity and to try something different from my usual projects.
-                                    <br />
-                                    By clicking on the image, you can also view the original reference that I manually
-                                    recreated in pixel art. 
                                     <br />
                                     The subject is the logo of the metal band
                                     <span className={`important ${darkClass}`}> Death</span>, chosen because it was
@@ -227,8 +222,6 @@ export default function Home({
                                     utilizzando <span className={`important ${darkClass}`}>Aseprite</span>, 
                                     principalmente per curiosità e per provare qualcosa di diverso rispetto ai 
                                     miei progetti abituali.
-                                    Cliccando sull'immagine è possibile visualizzare il riferimento originale che 
-                                    ho cercato di ricreare manualmente in pixel art. 
                                     <br />
                                     Il soggetto è il logo della band 
                                     metal <span className={`important ${darkClass}`}>Death</span>, scelto perché 
@@ -265,15 +258,7 @@ export default function Home({
                             )
                         }
                     </p>
-                    <a href="//thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Portrait_de_Dante.jpg/250px-Portrait_de_Dante.jpg?utm_source=it.wikipedia.org&utm_campaign=parser&utm_content=thumbnail" target="_blank">
-                        <img src="./imgs/arts/Dante Alighieri x5.png" alt=""/>
-                    </a>
-                    {/*
-                        Successivamente applicare un animazione 
-                        che permette all'utente di vedere la foto
-                        originale direttamente mettendo il cursore sopra 
-                        di esso, sostituendo l'immagine pixel.
-                    */}
+                    <div id="dante"></div>
                 </div>
             </section>
         </>

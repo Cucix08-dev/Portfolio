@@ -196,27 +196,77 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
+    justify-items: center;
     align-items: center;
-    row-gap: 40px;
+    gap: 40px;
 }
 
-#arts-with-description-container a {
+#arts-with-description-container div {
+    position: relative; 
+    overflow: hidden;   
     width: 100%;
+    max-width: 414px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#arts-with-description-container a img {
-    width: 70%;
-    filter: brightness(1);
     border-radius: 40px;
-
-    transition: filter 0.4s ease;
+    filter: brightness(1);
+    
+    transition: 
+        filter 0.4s ease;
 }
 
-#arts-with-description-container a img:hover {
-    filter: brightness(1.2);
+#arts-with-description-container div,
+#arts-with-description-container div::after {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#arts-with-description-container div::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease; 
+}
+
+#arts-with-description-container div:hover::after {
+    opacity: 1;
+}
+
+#dante {
+    aspect-ratio: 1/1;
+    background-image: url("./imgs/arts/Dante Alighieri x5.png");
+    background-position: center center;
+}
+
+#dante::after {
+    background-image: url("//thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Portrait_de_Dante.jpg/250px-Portrait_de_Dante.jpg?utm_source=it.wikipedia.org&utm_campaign=parser&utm_content=thumbnail");
+    background-position: center 0%; 
+}
+
+#death {
+    aspect-ratio: 1018/886; 
+    background-image: url("./imgs/arts/Death_Band_Logox5.png");
+    background-position: center center;
+}
+
+#death::after {
+    background-image: url("https://www.metal-archives.com/images/1/4/1/141_logo.png?3006");
+    background-position: center center;
+}
+
+@keyframes opacity-animationimgs {
+    from {
+        opacity: 0.9;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @media (max-width: 550px) {
